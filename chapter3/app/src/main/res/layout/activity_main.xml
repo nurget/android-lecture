@@ -16,6 +16,7 @@
         android:textColorHint="@color/purple_200"
         android:textSize="30sp"
         android:textStyle="italic"
+        android:maxLength="7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,6 +61,7 @@
         android:layout_height="wrap_content" />
 
     <ImageButton
+        android:id="@+id/swapImageButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/baseline_swap_vert_24"
