@@ -70,16 +70,12 @@
 
     <RadioGroup
         android:id="@+id/bloodTypeRadioGroup"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:gravity="end"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="@id/bloodTypeTextView"
-        app:layout_constraintEnd_toStartOf="@+id/bloodTypeSpinner"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/guideLine2"
-        app:layout_constraintTop_toTopOf="@id/bloodTypeTextView"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="@id/bloodTypeTextView" >
 
         <RadioButton
             android:id="@+id/bloodTypePlus"
@@ -97,11 +93,12 @@
 
     <Spinner
         android:id="@+id/bloodTypeSpinner"
-        android:layout_width="50dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="@id/nameEditText"
         app:layout_constraintTop_toTopOf="@id/bloodTypeTextView"
-        app:layout_constraintTop_toBottomOf="@id/bloodTypeTextView" />
+        app:layout_constraintTop_toBottomOf="@id/bloodTypeTextView"
+        app:layout_constraintStart_toEndOf="@+id/bloodTypeRadioGroup" />
 
     <CheckBox
         android:id="@+id/warningCheckBox"
