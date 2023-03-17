@@ -34,12 +34,12 @@ class MainActivity : AppCompatActivity() {
             binding.contactNumberValueTextView.text = getString(EMERGENCY_CONTACT, "미정")
             val warning = getString(WARNING, "")
 
-//            binding.precautionsTextView.isVisible = warning.isNullOrEmpty().not()
-//            binding.precautionsValueTextView.isVisible = warning.isNullOrEmpty().not()
-//            if(!warning.isNullOrEmpty()) {
-//                binding.precautionsValueTextView.text = warning
-//            }
-//            binding.precautionsValueTextView.text = getString(WARNING, "미정")
+            binding.precautionsTextView.isVisible = warning.isNullOrEmpty().not()
+            binding.precautionsValueTextView.isVisible = warning.isNullOrEmpty().not()
+            if(!warning.isNullOrEmpty()) {
+                binding.precautionsValueTextView.text = warning
+            }
+            binding.precautionsValueTextView.text = getString(WARNING, "미정")
         }
     }
 }

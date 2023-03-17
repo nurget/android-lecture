@@ -55,7 +55,7 @@ class EditActivity : AppCompatActivity() {
             putString(NAME, binding.nameEditText.text.toString())
             putString(BLOOD_TYPE, getBloodType())
             putString(EMERGENCY_CONTACT, binding.contactNumberEditText.toString())
-            putString(BIRTHDATE, binding.birthdateTextView.toString())
+            putString(BIRTHDATE, binding.birthdateValueTextView.toString())
             putString(WARNING, getWarning())
             apply()
         }
