@@ -3,14 +3,17 @@ package com.example.chapter6
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 import com.example.chapter6.databinding.ActivityMainBinding
 import com.example.chapter6.databinding.DialogCountdownSettingBinding
+import kotlin.concurrent.timer
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
     private var countdownSecond = 10
+    private var currentDeciSecond = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +47,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun start() {
+        timer(initialDelay = 0, period = 100) {
+            currentDeciSecond += 1
 
+            val minutes = currentDeciSecond.div(10) / 60
+            val seconds = currentDeciSecond.div(10) % 60
+            val deciSeconds = currentDeciSecond % 10
+
+            runOnUiThread {
+                binding.timeTextView.text =
+                    String.format("%02d:%02d", minutes, seconds)
+                binding.tickTextView.text = deciSeconds.toString()
+            }
+        }
     }
 
     private fun stop() {
